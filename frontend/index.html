@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Frontend</title>
+</head>
+<body>
+  <h1>Hello from Frontend</h1>
+  <button onclick="loadData()">Call API</button>
+  <p id="result"></p>
+
+  <script>
+    function loadData() {
+      fetch('/api')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('result').innerText = data.message;
+        });
+    }
+  </script>
+</body>
+</html>
